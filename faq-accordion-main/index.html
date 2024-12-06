@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+  <body>
+    <main>
+      <section class="background"></section>
+      <div class="padding">
+        <section class="faq-container">
+          <span class="header-box">
+            <img src="assets/images/icon-star.svg" alt="star icon" />
+            <h1>FAQs</h1>
+          </span>
+
+          <div class="accordion">
+            <span class="accordion-question-container">
+              <h2>What is Frontend Mentor, and how will it help me?</h2>
+              <a href="#">
+                <img
+                  src="assets/images/icon-plus.svg"
+                  class="accordion-icon plus"
+                  alt="plus icon"
+                />
+              </a>
+            </span>
+            <p class="disabled-p">
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.
+            </p>
+          </div>
+          <div class="accordion">
+            <span class="accordion-question-container">
+              <h2>Is Frontend Mentor free?</h2>
+              <a href="#">
+                <img
+                  src="assets/images/icon-plus.svg"
+                  class="accordion-icon plus"
+                  alt="plus icon"
+                />
+              </a>
+            </span>
+            <p class="disabled-p">
+              Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.
+            </p>
+          </div>
+          <div class="accordion">
+            <span class="accordion-question-container">
+              <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+              <a href="#">
+                <img
+                  src="assets/images/icon-plus.svg"
+                  class="accordion-icon plus"
+                  alt="plus icon"
+                />
+              </a>
+            </span>
+            <p class="disabled-p">
+              Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!
+            </p>
+          </div>
+          <div class="accordion">
+            <span class="accordion-question-container">
+              <h2>How can I get help if I'm stuck on a challenge?</h2>
+              <a href="#">
+                <img
+                  src="assets/images/icon-plus.svg"
+                  class="accordion-icon plus"
+                  alt="plus icon"
+                />
+              </a>
+            </span>
+            <p class="disabled-p">
+              The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const minusIcons = document.querySelectorAll(".minus");
+      const plusIcons = document.querySelectorAll(".plus");
+      const disabledP = document.querySelectorAll(".disabled-p");
+      const paragraph = document.querySelectorAll("p");
+      const secondaryHeader = document.querySelectorAll("h2");
+      const accordions = document.querySelectorAll(".accordion");
+
+      accordions.forEach((accordion, index) => {
+        accordion.addEventListener("click", function (e) {
+          const plusIconsTarget = plusIcons[index];
+          const plusOrMinusIcon = `${
+            plusIconsTarget.classList.contains("plus") ? "minus" : "plus"
+          }`;
+          disabledP[index].classList.toggle("disabled-p");
+          plusIconsTarget.classList.toggle("plus");
+          plusIconsTarget.classList.toggle("minus");
+          plusIconsTarget.src = `assets/images/icon-${plusOrMinusIcon}.svg`;
+          plusIconsTarget.alt = `${plusOrMinusIcon} icon`;
+        });
+      });
+    </script>
+  </body>
+</html>

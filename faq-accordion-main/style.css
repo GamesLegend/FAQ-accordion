@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: hsl(275, 100%, 97%);
+}
+
+section {
+  height: 30rem;
+}
+
+.background {
+  background-image: url(/assets/images/background-pattern-desktop.svg);
+  background-size: cover;
+}
+
+.faq-container {
+  transform: translateY(-15rem);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: hsl(0, 0%, 100%);
+  max-width: 65rem;
+  height: auto;
+  border-radius: 2rem;
+  margin: 0 auto;
+  padding: 2.4rem;
+}
+
+.padding {
+  padding: 0 2.4rem;
+}
+
+h1 {
+  font-size: 6.4rem;
+  color: hsl(292, 42%, 14%);
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.accordion {
+  border-bottom: 1px solid hsl(275, 100%, 97%);
+  padding: 0 0 2.4rem 0;
+  cursor: pointer;
+}
+
+.accordion:last-child {
+  border: 0;
+}
+
+.accordion-question-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  font-size: 2rem;
+  color: hsl(292, 42%, 14%);
+  cursor: pointer;
+}
+
+h2:hover {
+  color: #ad28eb;
+}
+
+.accordion-icon {
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  padding-top: 3rem;
+  color: hsl(292, 16%, 49%);
+}
+
+.disabled-p {
+  display: none;
+}
+
+@media (max-width: 42.5em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .background {
+    background-image: url(/assets/images/background-pattern-mobile.svg);
+    background-size: cover;
+  }
+}
+
+@media (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+  h1 {
+    font-size: 4.8rem;
+  }
+}
